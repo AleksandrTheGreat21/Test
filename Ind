@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Example</title>
+</head>
+<body>
+
+<form id="cookieForm">
+    <label for="x">Enter value for X:</label>
+    <input type="text" id="x" name="x"><br><br>
+    <label for="y">Enter value for Y:</label>
+    <input type="text" id="y" name="y"><br><br>
+    <button type="button" onclick="setCookieAndRedirect()">Set Cookie and Redirect</button>
+</form>
+
+<script>
+function setCookieAndRedirect() {
+    var x = document.getElementById("x").value;
+    var y = document.getElementById("y").value;
+    document.cookie = "x=" + x + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    document.cookie = "y=" + y + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    window.location.href = "Cart.html?x=" + x + "&y=" + y;
+}
+</script>
+
+</body>
+</html>
